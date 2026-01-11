@@ -2259,6 +2259,40 @@ section,
     font-size: 14px;
   }
 }
+/* Boutons PDF - style sombre cohérent avec le CV */
+.btn-pdf {
+  background-color: #2a2a2a;   /* gris foncé, pas blanc */
+  color: #ff4d4f;              /* ton accent rouge */
+  border: 1px solid #444;      /* bord discret */
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-pdf:hover {
+  background-color: #ff4d4f;   /* rouge accent */
+  color: #ffffff;              /* texte blanc uniquement au hover */
+  border-color: #ff4d4f;
+  transform: translateY(-2px);
+}
+.connecter-bg {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ), url("../assets/img/portfolio/background5.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Starter Section Section
