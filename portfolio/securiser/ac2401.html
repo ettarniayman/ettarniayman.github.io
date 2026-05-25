@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC24.01Cyber – Bonnes pratiques cybersécurité | Ayman Ettarni</title>
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #dc3545; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(220,53,69,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .breadcrumb-label { font-size: .78rem; color: var(--muted); }
+    .ac-hero { padding: 3rem 0 2.5rem; border-bottom: 1px solid rgba(220,53,69,.08); }
+    .badge-tech { background: rgba(220,53,69,.1); color: var(--accent); border: 1px solid rgba(220,53,69,.3); padding: 4px 14px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; }
+    .badge-sem { background: rgba(124,58,237,.12); color: #a78bfa; border: 1px solid rgba(124,58,237,.25); padding: 4px 12px; border-radius: 4px; font-size: .72rem; }
+    .content-section { background: var(--surface); border-radius: 12px; padding: 28px 30px; border: 1px solid rgba(255,255,255,.05); margin-bottom: 22px; }
+    .section-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: .75rem; display: flex; align-items: center; gap: 6px; }
+    .step-box { border-left: 3px solid var(--accent); padding-left: 18px; margin-bottom: 18px; }
+    .step-box h5 { font-size: .92rem; font-weight: 600; color: #e2e8f0; margin-bottom: .3rem; }
+    .step-box p { font-size: .85rem; color: var(--muted); margin: 0; }
+    .badge-mini { display: inline-block; background: rgba(220,53,69,.08); color: var(--accent); border: 1px solid rgba(220,53,69,.18); padding: 3px 10px; border-radius: 3px; font-size: .72rem; margin: 2px; }
+    .proof-box { background: var(--surface2); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .level-bar { height: 6px; background: rgba(255,255,255,.08); border-radius: 3px; margin-top: 8px; }
+    .level-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), #7c3aed); }
+    .reflexion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:576px){ .reflexion-grid { grid-template-columns: 1fr; } }
+    .ref-item { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 16px; }
+    .ref-item .ri-icon { font-size: 1.2rem; margin-bottom: 6px; }
+    .ref-item h5 { font-size: .85rem; font-weight: 600; color: #e2e8f0; margin-bottom: 5px; }
+    .ref-item p { font-size: .8rem; color: var(--muted); margin: 0; }
+    .bottom-nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 2.5rem; padding: 1.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+    .btn-accent { background: rgba(220,53,69,.1); border: 1px solid rgba(220,53,69,.3); color: var(--accent); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-accent:hover { background: rgba(220,53,69,.2); color: var(--accent); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); color: #94a3b8; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); color: #e2e8f0; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="../securiser.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour à Sécuriser</a>
+    <span class="breadcrumb-label">Sécuriser › <strong style="color:#e2e8f0">AC24.01Cyber</strong></span>
+  </div>
+</header>
+
+<section class="ac-hero">
+  <div class="container">
+    <div class="d-flex gap-2 mb-3 flex-wrap">
+      <span class="badge-tech">AC24.01Cyber</span>
+      <span class="badge-sem">Niveau 1 — S1</span>
+    </div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.4rem,3.5vw,2.1rem)">Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité</h1>
+    <p style="color:#94a3b8;max-width:650px;font-size:.95rem">Appliquer les recommandations de l'ANSSI et les bonnes pratiques d'hygiène numérique pour protéger les systèmes et sensibiliser les utilisateurs.</p>
+  </div>
+</section>
+
+<main class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8" data-aos="fade-right">
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-circle"></i> Définition de l'AC</div>
+        <h4 style="color:#fff;margin-bottom:1rem">Qu'est-ce que cet apprentissage critique ?</h4>
+        <p>Cet apprentissage valide ma capacité à identifier les risques liés à une mauvaise hygiène numérique et à appliquer les recommandations de cybersécurité au sein d'une organisation. Il s'agit de comprendre les menaces courantes et de savoir sensibiliser des utilisateurs non techniques.</p>
+        <p>J'ai appris à :</p>
+        <ul style="color:#94a3b8;line-height:2">
+          <li><strong style="color:#e2e8f0">Identifier les menaces :</strong> Phishing, ransomware, ingénierie sociale, malware — mécanismes et vecteurs d'attaque</li>
+          <li><strong style="color:#e2e8f0">Appliquer les bonnes pratiques :</strong> Mots de passe forts, gestionnaire de mots de passe, authentification à deux facteurs (2FA)</li>
+          <li><strong style="color:#e2e8f0">Sauvegardes :</strong> Règle 3-2-1, planification et tests de restauration</li>
+          <li><strong style="color:#e2e8f0">Sensibilisation :</strong> Rédaction de fiches à destination d'un public non technique</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-cpu"></i> Mise en pratique</div>
+        <div class="step-box">
+          <h5>SAÉ11 — Sensibilisation à l'hygiène informatique</h5>
+          <p>Étude des bonnes pratiques de sécurité numérique, analyse de cas réels de cyberattaques (phishing ciblé, ransomware) et rédaction d'une fiche de sensibilisation destinée à un public non technique.</p>
+        </div>
+        <div class="step-box">
+          <h5>MOOC SecNumacadémie — ANSSI</h5>
+          <p>Suivi des modules ANSSI portant sur les fondamentaux de la cybersécurité : sécurité du poste de travail, réseaux, identité et accès, cryptographie de base.</p>
+        </div>
+        <p><strong style="color:#e2e8f0">Actions réalisées :</strong></p>
+        <ol style="color:#94a3b8;line-height:2">
+          <li>Analyse des vecteurs d'attaques courants et de leur impact organisationnel</li>
+          <li>Rédaction d'une politique de mots de passe et configuration d'un gestionnaire (Bitwarden)</li>
+          <li>Mise en place d'un plan de sauvegarde selon la règle 3-2-1</li>
+          <li>Production d'une fiche de sensibilisation pour des utilisateurs non techniques</li>
+        </ol>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-lightbulb"></i> Réflexion personnelle</div>
+        <div class="reflexion-grid">
+          <div class="ref-item"><div class="ri-icon">✅</div><h5>Points maîtrisés</h5><p>Connaissance des grandes menaces (phishing, ransomware, MITM), bonnes pratiques ANSSI, importance du chiffrement HTTPS et de l'authentification forte (2FA).</p></div>
+          <div class="ref-item"><div class="ri-icon">📈</div><h5>Points à améliorer</h5><p>Mise en pratique sur des labs interactifs (TryHackMe) pour confronter la théorie aux attaques réelles et développer les réflexes défensifs.</p></div>
+          <div class="ref-item"><div class="ri-icon">💡</div><h5>Difficultés rencontrées</h5><p>Sensibiliser des utilisateurs non techniques aux enjeux de la cybersécurité sans les alarmer inutilement tout en restant concret et pédagogique.</p></div>
+          <div class="ref-item"><div class="ri-icon">🎯</div><h5>Objectifs futurs</h5><p>Compléter la certification SecNumacadémie et approfondir la sécurité offensive en contexte légal (CTF, labs).</p></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-4" data-aos="fade-left">
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-square"></i> Informations</div>
+        <ul class="list-unstyled mb-0" style="font-size:.88rem">
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Code</span><strong>AC24.01Cyber</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Compétence</span><strong>Sécuriser (UE 1.4)</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">SAÉ associée</span><strong>SAÉ11</strong></li>
+          <li><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Niveau de maîtrise</span>
+            <div class="level-bar"><div class="level-fill" style="width:75%"></div></div>
+            <span style="font-size:.75rem;color:var(--muted)">Bien acquis</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-folder2-open"></i> Preuves</div>
+        <div class="proof-box">
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px">SAÉ11 — Rapport hygiène informatique</p>
+          <h5 style="color:#e2e8f0;font-size:.88rem;margin-bottom:6px">Fiche de sensibilisation cybersécurité</h5>
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Rapport de sensibilisation aux bonnes pratiques numériques (mots de passe, phishing, 2FA, sauvegardes) rédigé pour un public non-technique — IUT de Béthune.</p>
+          <div class="d-flex flex-wrap gap-2 mb-2">
+            <span class="badge-mini"><i class="bi bi-calendar me-1"></i>S1 — 2024/2025</span>
+            <span class="badge-mini"><i class="bi bi-geo-alt me-1"></i>IUT de Béthune</span>
+          </div>
+          <p style="font-size:.75rem;color:var(--muted);font-style:italic;margin:0"><i class="bi bi-info-circle me-1"></i>Document réalisé en cours</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-tools"></i> Outils utilisés</div>
+        <div class="d-flex flex-wrap gap-1 mt-1">
+          <span class="badge-mini">ANSSI SecNum</span>
+          <span class="badge-mini">Bitwarden</span>
+          <span class="badge-mini">2FA</span>
+          <span class="badge-mini">Règle 3-2-1</span>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-grid-3x2-gap"></i> Autres AC</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="ac2402.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.02</span> Sécurisation infra</a>
+          <a href="ac2403.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.03</span> Sécuriser les services</a>
+          <a href="ac2404.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.04</span> Cryptographie</a>
+          <a href="ac2405.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.05</span> Types d'attaque</a>
+          <a href="ac2406.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.06</span> Anglais technique</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <a href="ac2402.html" class="btn-accent">AC24.02 → Sécurisation infra <i class="bi bi-arrow-right ms-2"></i></a>
+    <a href="../securiser.html" class="btn-ghost"><i class="bi bi-grid me-2"></i>Tous les AC</a>
+  </div>
+</main>
+
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../../legal.html" class="me-3">Mentions légales</a>
+    <a href="../../credits.html">Crédits</a>
+  </div>
+</footer>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
+</body>
+</html>

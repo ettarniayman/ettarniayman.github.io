@@ -3,138 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programmer – Portfolio Ayman Ettarni</title>
-
-  <!-- Bootstrap + ton CSS -->
+  <title>Programmer – Compétence 3 | Ayman Ettarni</title>
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #6f42c1; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(111,66,193,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .hero { padding: 4rem 0 3.5rem; border-bottom: 1px solid rgba(111,66,193,.1); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(111,66,193,.08) 0%, transparent 70%); top: -200px; right: -100px; border-radius: 50%; pointer-events: none; }
+    .comp-badge { display: inline-block; background: rgba(111,66,193,.12); border: 1px solid rgba(111,66,193,.3); color: #c4b5fd; padding: 5px 16px; border-radius: 50px; font-size: .75rem; font-weight: 700; letter-spacing: .06em; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+    .hero p { color: #94a3b8; max-width: 600px; font-size: .97rem; line-height: 1.7; }
+    .section-title { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 24px; }
+    .ac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .ac-card { background: var(--surface); border: 1px solid rgba(255,255,255,.05); border-radius: 14px; padding: 24px; text-decoration: none; color: inherit; transition: all .2s; display: flex; flex-direction: column; }
+    .ac-card:hover { border-color: rgba(111,66,193,.4); box-shadow: 0 4px 24px rgba(111,66,193,.12); transform: translateY(-2px); color: inherit; }
+    .ac-code { font-family: monospace; font-size: .72rem; color: var(--accent); background: rgba(111,66,193,.1); border: 1px solid rgba(111,66,193,.2); padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 12px; letter-spacing: .06em; }
+    .ac-card h3 { font-size: .95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 8px; line-height: 1.45; }
+    .ac-card p { font-size: .82rem; color: var(--muted); margin: 0 0 18px; flex-grow: 1; line-height: 1.6; }
+    .card-footer-row { display: flex; align-items: center; justify-content: space-between; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; }
+    .dot-green { background: #22c55e; }
+    .dot-orange { background: #f59e0b; }
+    .status-label { font-size: .72rem; color: var(--muted); }
+    .arrow { color: var(--accent); font-size: .85rem; }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
-<header class="py-3 border-bottom">
+<header class="page-header">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="../index.html#portfolio" class="text-decoration-none fw-bold">
-      <i class="bi bi-arrow-left"></i> Retour au portfolio
-    </a>
-    <span class="fw-semibold">Compétence : Programmer</span>
+    <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour au portfolio</a>
+    <span style="font-size:.78rem;color:var(--muted)">Compétence 3 — Programmer</span>
   </div>
 </header>
 
-<main class="container my-5">
+<section class="hero">
+  <div class="container" data-aos="fade-up">
+    <div class="comp-badge">UE 1.3 — Programmer</div>
+    <h1>Créer des outils et applications<br>informatiques pour les R&amp;T</h1>
+    <p>Programmer en Python et C, développer des pages web, gérer des données et travailler en environnement collaboratif avec Git et GitLab.</p>
+  </div>
+</section>
 
-  <h1 class="mb-3">Créer des outils et applications informatiques pour les RT</h1>
+<main class="container py-5">
+  <div class="section-title" data-aos="fade-up">Apprentissages Critiques</div>
+  <div class="ac-grid" data-aos="fade-up">
 
-  <p class="lead">
-       La compétence <strong>Programmer</strong> consiste à développer et
-    tester des programmes informatiques répondant à un besoin .
-    Elle s’appuie sur la structuration du code et
-    l’utilisation de langages de programmation adaptés au contexte
-  </p>
-
-  <hr class="my-4">
-      <h2 class="mb-3">Activités couvertes par la compétence</h2>
-  <ul>
-    <li>Utiliser un système informatique et ses outils</li>
-    <li>Utiliser des fonctions, modules et bibliothèques</li>
-    <li>Manipuler des données et des fichiers</li>
-    <li>Connaître l’architecture et les technologies d’un site Web </li>
-  </ul>
-
-  <hr class="my-4">
-  <h2 class="mb-3">Exemple de travaux réalisés (R107)</h2>
-
-  <div class="row g-4">
-    <div class="row g-4">
-    <!-- TP3 -->
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">SAÉ14 - Se présenter sur Internet</h3>
-          <p>
-            Concevoir un site personnel structuré, esthétique et adapté à tous les formats d’écran, en respectant les recommandations du W3C.
-          </p>
-          <p class="mb-2"><strong>Outils :</strong> Visual Studio Code</p>
-          <a class="btn btn-primary btn-sm"
-             href="https://github.com/ettarniayman/ettarniayman.github.io.git"><i class="bi bi-github"></i>
-          </a>
-        </div>
+    <a href="programmer/ac0311.html" class="ac-card">
+      <span class="ac-code">AC0311</span>
+      <h3>Utiliser un système informatique et ses outils</h3>
+      <p>Terminal, IDE VS Code, environnements virtuels Python, gestionnaire de versions Git.</p>
+      <div class="card-footer-row">
+        <span><span class="status-dot dot-green"></span><span class="status-label">Acquis</span></span>
+        <span class="arrow"><i class="bi bi-arrow-right"></i></span>
       </div>
-    </div>
+    </a>
 
-    <!-- TP3 -->
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">R107 — TP3 : Repition For</h3>
-          <p>
-            Être capable d'identifier une situation où un for est à utiliser dans un programme.
-Être capable de créer un programme comportant un for.
-          </p>
-          <p class="mb-2"><strong>Outils :</strong> Visual Studio Code</p>
-          <a class="btn btn-primary btn-sm"
-             href="../docs/TP3_R107/TP3/triangle_rectangle.py" target="_blank" rel="noopener">
-            Télécharger le fichiers
-          </a>
-        </div>
+    <a href="programmer/ac0312.html" class="ac-card">
+      <span class="ac-code">AC0312</span>
+      <h3>Lire, exécuter, corriger et modifier un programme</h3>
+      <p>Débogage de scripts Python, identification des erreurs syntaxiques et logiques.</p>
+      <div class="card-footer-row">
+        <span><span class="status-dot dot-green"></span><span class="status-label">Acquis</span></span>
+        <span class="arrow"><i class="bi bi-arrow-right"></i></span>
       </div>
-    </div>
+    </a>
 
-    <!-- SAE13 -->
-    <div class="col-12">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">R107 — TP3 : Fonctions</h3>
-          <p>
-           Être capable d'identifier une situation où une fonction est à utiliser, et être capable de créer et utiliser des fonctions.
-          </p>
-          <p class="mb-2"><strong>Outils :</strong>Visual studio code</p>
-          <a class="btn btn-primary btn-sm"
-             href="../docs/TP6_R107/utilisation_creation_liste2.py" target="_blank" rel="noopener">
-            Télécharger le fichiers
-          </a>
-        </div>
+    <a href="programmer/ac0313.html" class="ac-card">
+      <span class="ac-code">AC0313</span>
+      <h3>Traduire un algorithme dans un langage de programmation</h3>
+      <p>Implémentation Python d'algorithmes de traitement de données réseau (CIDR, scan de ports).</p>
+      <div class="card-footer-row">
+        <span><span class="status-dot dot-green"></span><span class="status-label">Acquis</span></span>
+        <span class="arrow"><i class="bi bi-arrow-right"></i></span>
       </div>
-    </div>
+    </a>
+
+    <a href="programmer/ac0314.html" class="ac-card">
+      <span class="ac-code">AC0314</span>
+      <h3>Connaître l'architecture et les technologies d'un site Web</h3>
+      <p>HTML5, CSS3, Bootstrap, Python/Flask, Jinja2 — ce portfolio en est la preuve directe.</p>
+      <div class="card-footer-row">
+        <span><span class="status-dot dot-green"></span><span class="status-label">Acquis</span></span>
+        <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="programmer/ac0315.html" class="ac-card">
+      <span class="ac-code">AC0315</span>
+      <h3>Choisir les mécanismes de gestion des données adaptés</h3>
+      <p>SQL/PostgreSQL, JSON/CSV en Python — création et interrogation de bases de données relationnelles.</p>
+      <div class="card-footer-row">
+        <span><span class="status-dot dot-green"></span><span class="status-label">Acquis</span></span>
+        <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="programmer/ac0316.html" class="ac-card">
+      <span class="ac-code">AC0316</span>
+      <h3>S'intégrer dans un environnement propice au travail collaboratif</h3>
+      <p>Git, GitHub Pages, GitLab IUT — dépôts personnels et projets en binôme (SAÉ15).</p>
+      <div class="card-footer-row">
+        <span><span class="status-dot dot-green"></span><span class="status-label">Acquis</span></span>
+        <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+      </div>
+    </a>
 
   </div>
+</main>
 
-  <hr class="my-4">
-
-<h2>Compétences développées</h2>
-<ul>
-  <li>Développer des programmes structurés en utilisant un langage de programmation</li>
-  <li>Utiliser des variables, conditions, boucles et fonctions</li>
-</ul>
- <!-- Logos des outils -->
-  <hr class="my-4">
-  <h2>Outils utilisés</h2>
-  <div class="d-flex flex-wrap gap-4 mt-3">
-    <img src="../assets/img/logo/wireshark.jpeg" alt="Wireshark" width="60">
-    <img src="../assets/img/logo/packet tracer.jpeg" alt="Cisco Packet Tracer" width="60">
-    <img src="../assets/img/logo/Vscode.jpeg" alt="VS Code" width="60">
-  </div>
-
-<hr class="my-4">
-<h2>Ressources utiles</h2>
-
-<a class="btn btn-outline-primary mt-3"
-   href="https://moodle.univ-artois.fr/"
-   target="_blank" rel="noopener">
-  📚 Accéder aux ressources Moodle
-</a>
-
-<a href="../index.html#portfolio" class="btn btn-secondary mt-3 d-block">
-  ⬅ Retour au portfolio
-</a>
-
-
-<footer class="py-4 border-top">
-  <div class="container text-center">
-    <a href="../legal.html">Mentions légales</a> • <a href="../credits.html">Crédits</a>
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../legal.html" class="me-3">Mentions légales</a>
+    <a href="../credits.html">Crédits</a>
   </div>
 </footer>
-
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
 </body>
 </html>

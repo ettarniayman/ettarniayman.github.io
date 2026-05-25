@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC0112 – Architecture des systèmes numériques | Ayman Ettarni</title>
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #00d4ff; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(0,212,255,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .breadcrumb-label { font-size: .78rem; color: var(--muted); }
+    .ac-hero { padding: 3rem 0 2.5rem; border-bottom: 1px solid rgba(0,212,255,.08); }
+    .badge-tech { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.3); padding: 4px 14px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; }
+    .badge-sem { background: rgba(124,58,237,.12); color: #a78bfa; border: 1px solid rgba(124,58,237,.25); padding: 4px 12px; border-radius: 4px; font-size: .72rem; }
+    .content-section { background: var(--surface); border-radius: 12px; padding: 28px 30px; border: 1px solid rgba(255,255,255,.05); margin-bottom: 22px; }
+    .section-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: .75rem; display: flex; align-items: center; gap: 6px; }
+    .step-box { border-left: 3px solid var(--accent); padding-left: 18px; margin-bottom: 18px; }
+    .step-box h5 { font-size: .92rem; font-weight: 600; color: #e2e8f0; margin-bottom: .3rem; }
+    .step-box p { font-size: .85rem; color: var(--muted); margin: 0; }
+    .badge-mini { display: inline-block; background: rgba(0,212,255,.08); color: var(--accent); border: 1px solid rgba(0,212,255,.18); padding: 3px 10px; border-radius: 3px; font-size: .72rem; margin: 2px; }
+    .proof-box { background: var(--surface2); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .level-bar { height: 6px; background: rgba(255,255,255,.08); border-radius: 3px; margin-top: 8px; }
+    .level-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), #7c3aed); }
+    .reflexion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:576px){ .reflexion-grid { grid-template-columns: 1fr; } }
+    .ref-item { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 16px; }
+    .ref-item .ri-icon { font-size: 1.2rem; margin-bottom: 6px; }
+    .ref-item h5 { font-size: .85rem; font-weight: 600; color: #e2e8f0; margin-bottom: 5px; }
+    .ref-item p { font-size: .8rem; color: var(--muted); margin: 0; }
+    .code-block { background: #0d1117; border: 1px solid rgba(0,212,255,.15); border-radius: 8px; padding: 16px; font-family: monospace; font-size: .8rem; color: #a8f0c8; line-height: 1.7; }
+    .bottom-nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 2.5rem; padding: 1.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+    .btn-cyan { background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.3); color: var(--accent); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-cyan:hover { background: rgba(0,212,255,.2); color: var(--accent); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); color: #94a3b8; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); color: #e2e8f0; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="../administrer.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour à Administrer</a>
+    <span class="breadcrumb-label">Administrer › <strong style="color:#e2e8f0">AC0112</strong></span>
+  </div>
+</header>
+
+<section class="ac-hero">
+  <div class="container">
+    <div class="d-flex gap-2 mb-3 flex-wrap">
+      <span class="badge-tech">AC0112</span>
+      <span class="badge-sem">Semestre 1</span>
+    </div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.4rem,3.5vw,2.1rem)">Architecture des systèmes numériques et codage de l'information</h1>
+    <p style="color:#94a3b8;max-width:650px;font-size:.95rem">Comprendre comment un ordinateur représente et traite l'information : codage binaire, hexadécimal, ASCII, Unicode, architecture Von Neumann, mémoires et bus.</p>
+  </div>
+</section>
+
+<main class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8" data-aos="fade-right">
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-circle"></i> Définition de l'AC</div>
+        <h4 style="color:#fff;margin-bottom:1rem">Pourquoi cet apprentissage critique ?</h4>
+        <p>La maîtrise de l'architecture numérique est la fondation de tout travail en réseau : adresses IP en binaire, masques en hexadécimal, codage des trames Ethernet — tout repose sur ces principes. Un administrateur réseau doit comprendre comment la machine interprète l'information.</p>
+        <ul style="color:#94a3b8;line-height:2">
+          <li><strong style="color:#e2e8f0">Systèmes de numération :</strong> binaire, octal, hexadécimal et conversions</li>
+          <li><strong style="color:#e2e8f0">Codage de l'information :</strong> ASCII, Unicode UTF-8, complément à 2</li>
+          <li><strong style="color:#e2e8f0">Architecture Von Neumann :</strong> CPU, mémoire RAM/ROM, bus de données</li>
+          <li><strong style="color:#e2e8f0">Stockage :</strong> bit, octet, kilo, méga, giga — calcul de capacités</li>
+          <li><strong style="color:#e2e8f0">Application réseau :</strong> conversion d'adresses IP en binaire pour le sous-réseau</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-cpu"></i> Mise en pratique</div>
+        <div class="step-box">
+          <h5>R101 — Systèmes numériques</h5>
+          <p>Exercices de conversions base 2 / base 10 / base 16, calcul de masques de sous-réseaux, et découverte de la représentation des entiers signés.</p>
+        </div>
+        <div class="step-box">
+          <h5>SAÉ 12 — Adressage IP</h5>
+          <p>Application directe : calcul du nombre d'hôtes d'un sous-réseau à partir d'un masque en notation CIDR, en passant par la représentation binaire.</p>
+        </div>
+        <p style="margin-bottom:10px"><strong style="color:#e2e8f0">Exemple — Conversion d'adresse IP :</strong></p>
+        <div class="code-block">
+192.168.1.10  →  11000000.10101000.00000001.00001010<br>
+Masque /24   →  11111111.11111111.11111111.00000000<br>
+Réseau       →  192.168.1.0<br>
+Broadcast    →  192.168.1.255  (254 hôtes disponibles)
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-lightbulb"></i> Réflexion personnelle</div>
+        <div class="reflexion-grid">
+          <div class="ref-item"><div class="ri-icon">✅</div><h5>Points maîtrisés</h5><p>Conversions binaires/hexa, calcul CIDR, compréhension de l'architecture Von Neumann.</p></div>
+          <div class="ref-item"><div class="ri-icon">📈</div><h5>Points à améliorer</h5><p>Codages avancés (IEEE 754 virgule flottante) et arithmétique binaire signée.</p></div>
+          <div class="ref-item"><div class="ri-icon">💡</div><h5>Difficultés rencontrées</h5><p>Automatiser les conversions de tête, sans calculatrice, lors des TD chronométrés.</p></div>
+          <div class="ref-item"><div class="ri-icon">🎯</div><h5>Objectifs futurs</h5><p>Appliquer ces connaissances au VLSM (Variable Length Subnet Masking) en S2.</p></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-4" data-aos="fade-left">
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-square"></i> Informations</div>
+        <ul class="list-unstyled mb-0" style="font-size:.88rem">
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Code</span><strong>AC0112</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Compétence</span><strong>Administrer (UE 1.1)</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Semestre</span><strong>S1</strong></li>
+          <li><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Niveau de maîtrise</span>
+            <div class="level-bar"><div class="level-fill" style="width:75%"></div></div>
+            <span style="font-size:.75rem;color:var(--muted)">Bien acquis</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-folder2-open"></i> Preuves</div>
+        <div class="proof-box">
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px">R101 — TP3 Architecture numérique</p>
+          <a href="../../docs/TP 3 R101 (3).pdf" target="_blank" class="btn-cyan d-inline-flex align-items-center gap-2" style="font-size:.8rem">
+            <i class="bi bi-file-earmark-pdf"></i> TP3 — R101
+          </a>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-tools"></i> Outils utilisés</div>
+        <div class="d-flex flex-wrap gap-1 mt-1">
+          <span class="badge-mini">Binaire / Hexa</span>
+          <span class="badge-mini">CIDR</span>
+          <span class="badge-mini">ASCII</span>
+          <span class="badge-mini">Architecture Von Neumann</span>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-grid-3x2-gap"></i> Autres AC</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="ac0111.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0111</span> Électricité</a>
+          <a href="ac0113.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0113</span> Réseau local</a>
+          <a href="ac0114.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0114</span> Systèmes d'exploitation</a>
+          <a href="ac0115.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0115</span> Dysfonctionnements</a>
+          <a href="ac0116.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0116</span> Poste client</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <a href="ac0113.html" class="btn-cyan">AC0113 → Réseau local <i class="bi bi-arrow-right ms-2"></i></a>
+    <a href="../administrer.html" class="btn-ghost"><i class="bi bi-grid me-2"></i>Tous les AC</a>
+  </div>
+</main>
+
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../../legal.html" class="me-3">Mentions légales</a>
+    <a href="../../credits.html">Crédits</a>
+  </div>
+</footer>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
+</body>
+</html>

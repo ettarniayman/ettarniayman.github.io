@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC0315 – Gestion de données | Ayman Ettarni</title>
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #6f42c1; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(111,66,193,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .breadcrumb-label { font-size: .78rem; color: var(--muted); }
+    .ac-hero { padding: 3rem 0 2.5rem; border-bottom: 1px solid rgba(111,66,193,.08); }
+    .badge-tech { background: rgba(111,66,193,.1); color: var(--accent); border: 1px solid rgba(111,66,193,.3); padding: 4px 14px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; }
+    .badge-sem { background: rgba(25,135,84,.12); color: #6ee7b7; border: 1px solid rgba(25,135,84,.25); padding: 4px 12px; border-radius: 4px; font-size: .72rem; }
+    .content-section { background: var(--surface); border-radius: 12px; padding: 28px 30px; border: 1px solid rgba(255,255,255,.05); margin-bottom: 22px; }
+    .section-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: .75rem; display: flex; align-items: center; gap: 6px; }
+    .step-box { border-left: 3px solid var(--accent); padding-left: 18px; margin-bottom: 18px; }
+    .step-box h5 { font-size: .92rem; font-weight: 600; color: #e2e8f0; margin-bottom: .3rem; }
+    .step-box p { font-size: .85rem; color: var(--muted); margin: 0; }
+    .badge-mini { display: inline-block; background: rgba(111,66,193,.08); color: var(--accent); border: 1px solid rgba(111,66,193,.18); padding: 3px 10px; border-radius: 3px; font-size: .72rem; margin: 2px; }
+    .proof-box { background: var(--surface2); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .level-bar { height: 6px; background: rgba(255,255,255,.08); border-radius: 3px; margin-top: 8px; }
+    .level-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), #198754); }
+    .reflexion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:576px){ .reflexion-grid { grid-template-columns: 1fr; } }
+    .ref-item { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 16px; }
+    .ref-item .ri-icon { font-size: 1.2rem; margin-bottom: 6px; }
+    .ref-item h5 { font-size: .85rem; font-weight: 600; color: #e2e8f0; margin-bottom: 5px; }
+    .ref-item p { font-size: .8rem; color: var(--muted); margin: 0; }
+    .bottom-nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 2.5rem; padding: 1.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+    .btn-accent { background: rgba(111,66,193,.1); border: 1px solid rgba(111,66,193,.3); color: var(--accent); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-accent:hover { background: rgba(111,66,193,.2); color: var(--accent); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); color: #94a3b8; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); color: #e2e8f0; }
+    .btn-dl { background: rgba(111,66,193,.1); border: 1px solid rgba(111,66,193,.3); color: var(--accent); padding: 7px 16px; border-radius: 6px; text-decoration: none; font-size: .8rem; display: inline-flex; align-items: center; gap: 6px; transition: all .2s; }
+    .btn-dl:hover { background: rgba(111,66,193,.2); color: var(--accent); }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="../programmer.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour à Programmer</a>
+    <span class="breadcrumb-label">Programmer › <strong style="color:#e2e8f0">AC0315</strong></span>
+  </div>
+</header>
+<section class="ac-hero">
+  <div class="container">
+    <div class="d-flex gap-2 mb-3 flex-wrap">
+      <span class="badge-tech">AC0315</span>
+      <span class="badge-sem">Niveau 1 — S2</span>
+    </div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.4rem,3.5vw,2.1rem)">Choisir les mécanismes de gestion de données adaptés</h1>
+    <p style="color:#94a3b8;max-width:650px;font-size:.95rem">Sélectionner et utiliser les structures de données et systèmes de stockage appropriés (fichiers, bases de données SQL) pour le développement d'outils réseau.</p>
+  </div>
+</section>
+<main class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8" data-aos="fade-right">
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-circle"></i> Définition de l'AC</div>
+        <h4 style="color:#fff;margin-bottom:1rem">Qu'est-ce que cet apprentissage critique ?</h4>
+        <p>Cet apprentissage valide ma capacité à choisir le bon mécanisme de persistance des données selon le contexte applicatif. Il s'agit de maîtriser le SQL, les bases de données relationnelles et les formats d'échange courants (JSON, CSV).</p>
+        <ul style="color:#94a3b8;line-height:2">
+          <li><strong style="color:#e2e8f0">SQL :</strong> Création de tables, requêtes SELECT/INSERT/UPDATE/DELETE, jointures</li>
+          <li><strong style="color:#e2e8f0">PostgreSQL :</strong> Déploiement d'une base de données relationnelle, gestion des utilisateurs</li>
+          <li><strong style="color:#e2e8f0">Formats d'échange :</strong> JSON, CSV — parsing et génération en Python</li>
+          <li><strong style="color:#e2e8f0">ORM :</strong> Utilisation de SQLAlchemy avec Flask pour interagir avec la base</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-cpu"></i> Mise en pratique</div>
+        <div class="step-box">
+          <h5>R2.09 — TP1 Création de base de données SQL</h5>
+          <p>Conception et implémentation d'une base de données PostgreSQL : modélisation MCD/MLD, création de tables, insertion de données et requêtes SQL complexes.</p>
+        </div>
+        <div class="step-box">
+          <h5>SAE15 — Stockage de données réseau en JSON/CSV</h5>
+          <p>Développement de scripts Python pour collecter des données réseau (résultats de ping, inventaire ARP) et les persister en format JSON et CSV pour analyse ultérieure.</p>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-lightbulb"></i> Réflexion personnelle</div>
+        <div class="reflexion-grid">
+          <div class="ref-item"><div class="ri-icon">✅</div><h5>Points maîtrisés</h5><p>Modélisation relationnelle, requêtes SQL de base, manipulation de JSON/CSV en Python, création de bases PostgreSQL.</p></div>
+          <div class="ref-item"><div class="ri-icon">📈</div><h5>Points à améliorer</h5><p>Requêtes avancées (sous-requêtes, fenêtres analytiques) et utilisation d'un ORM complet avec Flask-SQLAlchemy.</p></div>
+          <div class="ref-item"><div class="ri-icon">💡</div><h5>Difficultés rencontrées</h5><p>Choisir la bonne normalisation de la base (1NF, 2NF, 3NF) pour éviter les redondances sans sur-complexifier le schéma.</p></div>
+          <div class="ref-item"><div class="ri-icon">🎯</div><h5>Objectifs futurs</h5><p>Intégrer une base de données dans une application Flask complète avec API REST et gestion des migrations.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4" data-aos="fade-left">
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-square"></i> Informations</div>
+        <ul class="list-unstyled mb-0" style="font-size:.88rem">
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Code</span><strong>AC0315</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Compétence</span><strong>Programmer (UE 1.3)</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Modules</span><strong>R2.06, R107</strong></li>
+          <li><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Niveau de maîtrise</span>
+            <div class="level-bar"><div class="level-fill" style="width:72%"></div></div>
+            <span style="font-size:.75rem;color:var(--muted)">Bien acquis</span>
+          </li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-folder2-open"></i> Preuves</div>
+        <div class="proof-box">
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px">R2.06 — TP1 Création de base de données</p>
+          <a href="../../docs/TP1 - création de base de données (1).pdf" target="_blank" class="btn-dl">
+            <i class="bi bi-file-earmark-pdf"></i> Ouvrir TP1 SQL
+          </a>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-tools"></i> Outils utilisés</div>
+        <div class="d-flex flex-wrap gap-1 mt-1">
+          <span class="badge-mini">PostgreSQL</span>
+          <span class="badge-mini">SQL</span>
+          <span class="badge-mini">Python json/csv</span>
+          <span class="badge-mini">DBeaver</span>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-grid-3x2-gap"></i> Autres AC</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="ac0311.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0311</span> Système informatique</a>
+          <a href="ac0312.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0312</span> Corriger un programme</a>
+          <a href="ac0313.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0313</span> Algorithmes</a>
+          <a href="ac0314.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0314</span> Architecture Web</a>
+          <a href="ac0316.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC0316</span> Collaboratif</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <a href="ac0314.html" class="btn-ghost"><i class="bi bi-arrow-left me-2"></i>AC0314 — Architecture Web</a>
+    <a href="ac0316.html" class="btn-accent">AC0316 → Environnement collaboratif <i class="bi bi-arrow-right ms-2"></i></a>
+    <a href="../programmer.html" class="btn-ghost"><i class="bi bi-grid me-2"></i>Tous les AC</a>
+  </div>
+</main>
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../../legal.html" class="me-3">Mentions légales</a>
+    <a href="../../credits.html">Crédits</a>
+  </div>
+</footer>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
+</body>
+</html>

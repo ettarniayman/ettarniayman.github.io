@@ -3,63 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surveiller – Portfolio Ayman Ettarni</title>
-
-  <!-- Bootstrap + ton CSS -->
+  <title>Surveiller – Compétence 5 | Ayman Ettarni</title>
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #fd7e14; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(253,126,20,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .hero { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid rgba(253,126,20,.08); }
+    .comp-badge { display: inline-block; background: rgba(253,126,20,.1); color: var(--accent); border: 1px solid rgba(253,126,20,.3); padding: 5px 16px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; margin-bottom: 1rem; }
+    .ac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .ac-card { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 26px; text-decoration: none; color: inherit; transition: all .2s; display: flex; flex-direction: column; }
+    .ac-card:hover { border-color: rgba(253,126,20,.35); box-shadow: 0 0 0 1px rgba(253,126,20,.12), 0 8px 32px rgba(253,126,20,.06); transform: translateY(-2px); }
+    .ac-code { font-family: monospace; font-size: .72rem; color: var(--accent); background: rgba(253,126,20,.08); border: 1px solid rgba(253,126,20,.18); padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 12px; }
+    .ac-card h3 { font-size: .95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 8px; line-height: 1.45; }
+    .ac-card p { font-size: .82rem; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.6; }
+    .ac-card .arrow { color: var(--accent); font-size: .85rem; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot-green { background: #22c55e; }
+    .dot-orange { background: #f59e0b; }
+    .status-label { font-size: .72rem; color: var(--muted); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
-<header class="py-3 border-bottom">
+<header class="page-header">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="../index.html#portfolio" class="text-decoration-none fw-bold">
-      <i class="bi bi-arrow-left"></i> Retour au portfolio
-    </a>
-    <span class="fw-semibold">Compétence : SURVEILLER</span>
+    <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour au portfolio</a>
+    <span style="font-size:.78rem;color:var(--muted)">Compétence 5 — Surveiller</span>
   </div>
 </header>
 
-<main class="container my-5">
+<section class="hero">
+  <div class="container" data-aos="fade-up">
+    <div class="comp-badge">UE 1.5 — Surveiller</div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.6rem,4vw,2.4rem)">Surveiller un système<br>d'information sécurisé</h1>
+    <p style="color:#94a3b8;max-width:600px;font-size:.97rem">Administrer les protections contre les logiciels malveillants et prendre en main les outils de test de pénétration réseau/système — Parcours Cybersécurité.</p>
+  </div>
+</section>
 
-  <h1 class="mb-3">Surveiller un système d’information sécurisé</h1>
+<main class="container py-5">
+  <h2 class="mb-4" style="font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Apprentissages Critiques</h2>
+  <div class="ac-grid" data-aos="fade-up">
 
-  <p class="lead">
-       La compétence <strong>Surveiller</strong> consiste à contrôler le bon fonctionnement d’un système d’information
-    et d’un réseau afin de garantir la disponibilité des services. Elle permet de détecter
-    les incidents, d’analyser les performances et d’anticiper les dysfonctionnements.
-  </p>
-  <hr class="my-4">
-  <h2>Compétences a développées</h2>
-  <ul>
-    <li>Administrer les outils de surveillance du système d’information </li>
-    <li>Administrer les protections contre les logiciels malveillants </li>
-    <li>Surveiller l’activité du système d’information </li>
-    <li>Détecter les anomalies ou les incidents</li>
-    <li>Proposer des actions correctives après un incident</li>
-  </ul>
-  <hr class="my-4">
-  <h2>Ressources utiles</h2>
-      <a class="btn btn-outline-primary mt-3"
-   href="https://moodle.univ-artois.fr/"
-   target="_blank" rel="noopener">
-  📚 Accéder aux ressources Moodle
-      </a>
-    <a href="../index.html#portfolio" class="btn btn-secondary mt-3 d-block">
-  ⬅ Retour au portfolio
+    <a href="surveiller/ac2501.html" class="ac-card">
+      <span class="ac-code">AC25.01Cyber</span>
+      <h3>Administrer les protections contre les logiciels malveillants</h3>
+      <p>Antivirus, EDR, politiques de sécurité endpoint, analyse de fichiers suspects, IOC et gestion des signatures.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
     </a>
-  </a>
-  </a>
 
+    <a href="surveiller/ac2502.html" class="ac-card">
+      <span class="ac-code">AC25.02Cyber</span>
+      <h3>Prendre en main des outils de test de pénétration réseau/système</h3>
+      <p>Nmap, Wireshark, Metasploit — reconnaissance, scan de ports et identification des vulnérabilités en lab contrôlé.</p>
+      <div><span class="status-dot dot-orange"></span><span class="status-label">En cours</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+  </div>
 </main>
 
-<footer class="py-4 border-top">
-  <div class="container text-center">
-    <a href="../legal.html">Mentions légales</a> • <a href="../credits.html">Crédits</a>
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../legal.html" class="me-3">Mentions légales</a>
+    <a href="../credits.html">Crédits</a>
   </div>
 </footer>
-
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
 </body>
 </html>

@@ -3,63 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sécuriser – Portfolio Ayman Ettarni</title>
-
-  <!-- Bootstrap + ton CSS -->
+  <title>Sécuriser – Compétence 4 | Ayman Ettarni</title>
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #dc3545; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(220,53,69,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .hero { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid rgba(220,53,69,.08); }
+    .comp-badge { display: inline-block; background: rgba(220,53,69,.1); color: var(--accent); border: 1px solid rgba(220,53,69,.3); padding: 5px 16px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; margin-bottom: 1rem; }
+    .ac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .ac-card { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 26px; text-decoration: none; color: inherit; transition: all .2s; display: flex; flex-direction: column; }
+    .ac-card:hover { border-color: rgba(220,53,69,.35); box-shadow: 0 0 0 1px rgba(220,53,69,.12), 0 8px 32px rgba(220,53,69,.06); transform: translateY(-2px); }
+    .ac-code { font-family: monospace; font-size: .72rem; color: var(--accent); background: rgba(220,53,69,.08); border: 1px solid rgba(220,53,69,.18); padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 12px; }
+    .ac-card h3 { font-size: .95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 8px; line-height: 1.45; }
+    .ac-card p { font-size: .82rem; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.6; }
+    .ac-card .arrow { color: var(--accent); font-size: .85rem; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot-green { background: #22c55e; }
+    .dot-orange { background: #f59e0b; }
+    .status-label { font-size: .72rem; color: var(--muted); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
-<header class="py-3 border-bottom">
+<header class="page-header">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="../index.html#portfolio" class="text-decoration-none fw-bold">
-      <i class="bi bi-arrow-left"></i> Retour au portfolio
-    </a>
-    <span class="fw-semibold">Compétence : Sécuriser</span>
+    <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour au portfolio</a>
+    <span style="font-size:.78rem;color:var(--muted)">Compétence 4 — Sécuriser</span>
   </div>
 </header>
 
-<main class="container my-5">
+<section class="hero">
+  <div class="container" data-aos="fade-up">
+    <div class="comp-badge">UE 1.4 — Sécuriser</div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.6rem,4vw,2.4rem)">Administrer un système<br>d'information sécurisé</h1>
+    <p style="color:#94a3b8;max-width:600px;font-size:.97rem">Bonnes pratiques de cybersécurité, sécurisation des infrastructures réseau, cryptographie et compréhension des cybermenaces — Parcours Cybersécurité.</p>
+  </div>
+</section>
 
-  <h1 class="mb-3">Administrer un système d’information sécurisé</h1>
+<main class="container py-5">
+  <h2 class="mb-4" style="font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Apprentissages Critiques</h2>
+  <div class="ac-grid" data-aos="fade-up">
 
-  <p class="lead">
-       La compétence <strong>Sécuriser</strong> consiste à protéger les systèmes informatiques et les réseaux
-    contre les menaces et les vulnérabilités. Elle vise à garantir la confidentialité,
-    l’intégrité et la disponibilité des données et des services, tout en appliquant
-    les bonnes pratiques de cybersécurité
-  </p>
-  <hr class="my-4">
-  <h2>Compétences a développées</h2>
-  <ul>
-    <li>Identifier les risques et vulnérabilités d’un système d’information</li>
-    <li>Sécuriser les systèmes d’exploitation </li>
-    <li>Mettre en œuvre des outils avancés de sécurisation d’une infrastructure du réseau</li>
-    <li>Connaître les différents types d’attaque</li>
-    <li>Comprendre les enjeux de la sécurité informatique dans un réseau</li>
-  </ul>
-  <hr class="my-4">
-  <h2>Ressources utiles</h2>
-      <a class="btn btn-outline-primary mt-3"
-   href="https://moodle.univ-artois.fr/"
-   target="_blank" rel="noopener">
-  📚 Accéder aux ressources Moodle
-      </a>
-    <a href="../index.html#portfolio" class="btn btn-secondary mt-3 d-block">
-  ⬅ Retour au portfolio
+    <a href="securiser/ac2401.html" class="ac-card">
+      <span class="ac-code">AC24.01Cyber</span>
+      <h3>Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité</h3>
+      <p>Hygiène numérique, recommandations ANSSI, gestion des mots de passe, sauvegardes 3-2-1, sensibilisation utilisateurs.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
     </a>
-  </a>
 
+    <a href="securiser/ac2402.html" class="ac-card">
+      <span class="ac-code">AC24.02Cyber</span>
+      <h3>Mettre en œuvre les outils fondamentaux de sécurisation d'une infrastructure du réseau</h3>
+      <p>Pare-feu UFW/iptables, segmentation réseau, durcissement OS Debian, gestion des droits d'accès.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="securiser/ac2403.html" class="ac-card">
+      <span class="ac-code">AC24.03Cyber</span>
+      <h3>Sécuriser les services</h3>
+      <p>SSH sécurisé, HTTPS avec Let's Encrypt, fail2ban, désactivation des services inutiles, durcissement Nginx.</p>
+      <div><span class="status-dot dot-orange"></span><span class="status-label">En cours</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="securiser/ac2404.html" class="ac-card">
+      <span class="ac-code">AC24.04Cyber</span>
+      <h3>Choisir les outils cryptographiques adaptés au besoin fonctionnel du système d'information</h3>
+      <p>Chiffrement symétrique/asymétrique, PKI, certificats TLS, OpenSSL, GPG — algorithmes et cas d'usage.</p>
+      <div><span class="status-dot dot-orange"></span><span class="status-label">En cours</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="securiser/ac2405.html" class="ac-card">
+      <span class="ac-code">AC24.05Cyber</span>
+      <h3>Connaître les différents types d'attaque</h3>
+      <p>Phishing, ransomware, MITM, injection SQL, XSS, DoS/DDoS — mécanismes, vecteurs et contre-mesures.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="securiser/ac2406.html" class="ac-card">
+      <span class="ac-code">AC24.06Cyber</span>
+      <h3>Comprendre des documents techniques en anglais</h3>
+      <p>Lecture de RFC, CVE, advisories CERT/ANSSI, documentation Cisco/Linux et NIST en anglais.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+  </div>
 </main>
 
-<footer class="py-4 border-top">
-  <div class="container text-center">
-    <a href="../legal.html">Mentions légales</a> • <a href="../credits.html">Crédits</a>
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../legal.html" class="me-3">Mentions légales</a>
+    <a href="../credits.html">Crédits</a>
   </div>
 </footer>
-
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
 </body>
 </html>

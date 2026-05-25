@@ -3,148 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connecter – Portfolio Ayman Ettarni</title>
-
-  <!-- Bootstrap + ton CSS -->
+  <title>Connecter – Compétence 2 | Ayman Ettarni</title>
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #198754; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(25,135,84,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .hero { padding: 50px 0 40px; border-bottom: 1px solid rgba(25,135,84,.08); }
+    .comp-badge { display: inline-block; background: rgba(25,135,84,.1); border: 1px solid rgba(25,135,84,.3); padding: 4px 14px; border-radius: 50px; font-size: .75rem; font-weight: 700; color: var(--accent); margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 700; margin-bottom: 10px; color: #fff; }
+    .hero p { color: #94a3b8; max-width: 600px; font-size: .97rem; }
+    .ac-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 20px; }
+    .ac-card { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 26px; text-decoration: none; color: inherit; transition: all .2s; display: flex; flex-direction: column; }
+    .ac-card:hover { border-color: rgba(25,135,84,.35); box-shadow: 0 0 0 1px rgba(25,135,84,.12), 0 8px 32px rgba(25,135,84,.06); transform: translateY(-2px); }
+    .ac-code { font-family: monospace; font-size: .72rem; color: var(--accent); background: rgba(25,135,84,.08); border: 1px solid rgba(25,135,84,.18); padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 12px; }
+    .ac-card h3 { font-size: .95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 8px; line-height: 1.45; }
+    .ac-card p { font-size: .82rem; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.6; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot-green { background: #22c55e; }
+    .dot-orange { background: #f59e0b; }
+    .status-label { font-size: .72rem; color: var(--muted); }
+    .arrow { color: var(--accent); font-size: .85rem; }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
-<header class="py-3 border-bottom">
+<header class="page-header">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="../index.html#portfolio" class="text-decoration-none fw-bold">
-      <i class="bi bi-arrow-left"></i> Retour au portfolio
-    </a>
-    <span class="fw-semibold">Compétence : CONNECTER</span>
+    <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour au portfolio</a>
+    <span style="font-size:.78rem;color:var(--muted)">Compétence 2 — Connecter</span>
   </div>
 </header>
-
-<main class="container my-5">
-
-  <h1 class="mb-3">Connecter les entreprises et les usagers</h1>
-
-  <p class="lead">
-       La compétence <strong>Connecter</strong> consiste à mettre en place et utiliser des solutions de communication pour permettre l’échange d’informations entre des équipements et des utilisateurs. Elle repose sur la compréhension des supports de transmission et des bases des télécommunications.
-  </p>
-
-  <hr class="my-4">
-  <h2 class="mb-3">Activités couvertes par la compétence</h2>
-
-  <ul>
-    <li>Identifier et choisir des supports de transmission adaptés</li>
-    <li>Interpréter des mesures liées à la propagation et à l’atténuation</li>
-    <li>Comparer et justifier des solutions techniques de connexion</li>
-    <li>Mesurer et analyser les signaux</li>
-  </ul>
-
-  <hr class="my-4">
-  <h2 class="mb-3">Exemple de travaux réalisés (R105 - SAE13)</h2>
-
-  <div class="row g-4">
-
-    <!-- TP1 -->
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">R1.05 — TP1 : Supports de transmission (câbles RJ45)</h3>
-          <p>
-            Reconnaissance des câbles RJ45 (droit / croisé) et mesures sur paires torsadées
-            (ex : paramètres électriques). Objectif : comprendre le rôle du câblage dans un réseau local.
-          </p>
-          <p class="mb-2"><strong>Outils :</strong> matériel RJ45 + mesures</p>
-          <a class="btn btn-primary btn-sm"
-             href="../docs/Seance_TP1_R105_aymanettarni.pdf" target="_blank" rel="noopener">
-            Ouvrir le PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- TP2 -->
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">R1.05 — TP2 : Propagation, atténuation et réflectométrie</h3>
-          <p>
-            Mesure du délai de propagation et analyse de la réflexion (court-circuit / circuit ouvert),
-            ainsi que l’atténuation selon la fréquence. Objectif : analyser la qualité d’un support de transmission.
-          </p>
-          <p class="mb-2"><strong>Outils :</strong> générateur / analyse de signal</p>
-          <a class="btn btn-primary btn-sm"
-             href="../docs/SeanceTP2_AymanEttarni.pdf" target="_blank" rel="noopener">
-            Ouvrir le PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SAE13 -->
-    <div class="col-12">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">SAÉ13 — Découvrir un dispositif de transmission (bilan)</h3>
-          <p>
-            Synthèse des résultats et recommandations “client” : comparaison entre un câble de 5 m et 20 m
-            sur la propagation et la performance. Objectif : argumenter une solution technique.
-          </p>
-          <p class="mb-2">
-            <strong>Conclusion :</strong> privilégier une longueur plus courte pour améliorer performances et délais.
-          </p>
-
-          <a class="btn btn-primary btn-sm"
-             href="../docs/6ème_séance(2h)_bilandelaSAE_AYMAN_ETTARNINASSIM_EL_BOUZIANI.pdf"
-             target="_blank" rel="noopener">
-             Ouvrir le PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
+<section class="hero">
+  <div class="container" data-aos="fade-up">
+    <div class="comp-badge">UE 1.2 — Connecter</div>
+    <h1>Connecter les entreprises<br>et les usagers</h1>
+    <p>Déployer des supports de transmission, analyser des signaux, configurer des systèmes ToIP et communiquer de manière professionnelle.</p>
   </div>
-
-  <hr class="my-4">
-
-  <h2>Compétences développées</h2>
-  <ul>
-    <li>Comprendre les supports de transmission d’un réseau local</li>
-    <li>Mesurer et interpréter la propagation, l’atténuation et la réflexion</li>
-    <li>Justifier un choix technique (ex : longueur de câble) selon des résultats</li>
-  </ul>
-    <!-- Logos des outils -->
-  <hr class="my-4">
-  <h2>Outils utilisés</h2>
-  <div class="d-flex flex-wrap gap-4 mt-3">
-    <img src="../assets/img/logo/Matlab.jpeg" alt="Matlab" width="60">
-    <img src="../assets/img/logo/Scilab.jpeg" alt="Scilab" width="60">
-    <img src="../assets/img/logo/Ltspice.jpeg" alt="Ltspice" width="60">
-
+</section>
+<main class="container py-5">
+  <h2 class="mb-4" style="font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Apprentissages Critiques</h2>
+  <div class="ac-grid" data-aos="fade-up">
+    <a href="connecter/ac0211.html" class="ac-card">
+      <span class="ac-code">AC0211</span>
+      <h3>Mesurer et analyser les signaux</h3>
+      <p>Oscilloscope, multimètre, caractérisation de signaux électriques dans les équipements R&T.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+    <a href="connecter/ac0212.html" class="ac-card">
+      <span class="ac-code">AC0212</span>
+      <h3>Caractériser des systèmes de transmissions élémentaires</h3>
+      <p>Modélisation mathématique, diagramme de Bode, atténuation en dB, bande passante.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+    <a href="connecter/ac0213.html" class="ac-card">
+      <span class="ac-code">AC0213</span>
+      <h3>Déployer des supports de transmissions</h3>
+      <p>Câblage RJ45, baie de brassage, normes T568A/B, fibre optique, liaisons hertziennes.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+    <a href="connecter/ac0214.html" class="ac-card">
+      <span class="ac-code">AC0214</span>
+      <h3>Connecter les systèmes de ToIP</h3>
+      <p>IPBX Asterisk/3CX, protocoles SIP et RTP, softphones, analyse de flux dans Wireshark.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+    <a href="connecter/ac0215.html" class="ac-card">
+      <span class="ac-code">AC0215</span>
+      <h3>Communiquer avec un client ou un collaborateur</h3>
+      <p>Rédaction de rapports techniques, présentation de solutions réseau en français et en anglais.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
   </div>
-
-  <!-- 🔗 SECTION AJOUTÉE : LIEN MOODLE -->
-  <hr class="my-4">
-  <h2>Ressources utiles</h2>
-  <a class="btn btn-outline-primary mt-3"
-     href="https://moodle.univ-artois.fr/"
-     target="_blank" rel="noopener">
-    📚 Accéder aux ressources Moodle
-  </a>
-
-  <a href="../index.html#portfolio" class="btn btn-secondary mt-3 d-block">
-    ⬅ Retour au portfolio
-  </a>
-
 </main>
-
-<footer class="py-4 border-top">
-  <div class="container text-center">
-    <a href="../legal.html">Mentions légales</a> • <a href="../credits.html">Crédits</a>
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../legal.html" class="me-3">Mentions légales</a>
+    <a href="../credits.html">Crédits</a>
   </div>
 </footer>
-
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
 </body>
 </html>
-
- 

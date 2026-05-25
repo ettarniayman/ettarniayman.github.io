@@ -1,0 +1,212 @@
+/* ============================================================
+   ac-pages.css — Styles partagés pour les pages AC (light theme)
+   Utilisé par : programmer/, securiser/, surveiller/, connecter/
+   Chaque page définit : --accent et --accent-soft dans :root
+   ============================================================ */
+
+/* ----- Header ----- */
+.page-header {
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.back-link {
+  font-weight: 600;
+  color: #495057;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color .2s;
+}
+.back-link:hover { color: var(--accent); }
+.breadcrumb-label { font-size: .82rem; color: #adb5bd; font-weight: 500; }
+
+/* ----- Hero ----- */
+.ac-hero {
+  background: linear-gradient(135deg, #0d1b2a, #1a2f4a);
+  color: #fff;
+  padding: 50px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+.ac-hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-soft, rgba(255,255,255,.05)) 0%, transparent 70%);
+  bottom: -150px;
+  right: -80px;
+  border-radius: 50%;
+  opacity: 3;
+}
+.ac-nav-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.badge-ue {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: #a8c5f8;
+}
+.badge-ac {
+  background: var(--accent);
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: #fff;
+}
+.ac-hero h1 {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.ac-hero p.lead {
+  color: rgba(255,255,255,.75);
+  max-width: 600px;
+  font-size: .95rem;
+}
+
+/* ----- Content Cards ----- */
+.content-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 2px 14px rgba(0,0,0,.05);
+  margin-bottom: 24px;
+}
+.content-card .card-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 14px;
+}
+.content-card p,
+.content-card li {
+  color: #495057;
+  line-height: 1.75;
+  font-size: .93rem;
+}
+
+/* ----- Situation Blocks ----- */
+.situation-block {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.situation-block .sit-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.situation-block h4 {
+  font-size: .95rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 4px;
+}
+.situation-block p { font-size: .86rem; color: #495057; margin: 0; }
+
+/* ----- Travail Cards ----- */
+.travail-card {
+  border: 1.5px solid #e9ecef;
+  border-radius: 12px;
+  padding: 22px;
+  transition: all .2s;
+  height: 100%;
+}
+.travail-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px var(--accent-soft);
+}
+.travail-card .ressource-label {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #adb5bd;
+  margin-bottom: 8px;
+}
+.travail-card h4 { font-size: 1rem; font-weight: 600; color: #212529; margin-bottom: 6px; }
+.travail-card p { font-size: .85rem; color: #6c757d; margin-bottom: 14px; }
+
+/* ----- Réflexion Grid ----- */
+.reflexion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 576px) { .reflexion-grid { grid-template-columns: 1fr; } }
+.reflexion-item { background: #f8f9fa; border-radius: 10px; padding: 18px; }
+.reflexion-item .ri-icon { font-size: 1.3rem; margin-bottom: 8px; }
+.reflexion-item h5 { font-size: .88rem; font-weight: 700; color: #212529; margin-bottom: 6px; }
+.reflexion-item p { font-size: .83rem; color: #6c757d; margin: 0; }
+
+/* ----- Sidebar Info ----- */
+.info-sidebar ul { font-size: .88rem; }
+.info-sidebar .info-label {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #adb5bd;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* ----- Tool Badges ----- */
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: .78rem;
+  color: #495057;
+}
+.tool-badge i { color: var(--accent); }
+
+/* ----- Bottom Navigation ----- */
+.bottom-nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding-bottom: 20px;
+}
+
+/* ----- Footer ----- */
+footer { background: #fff; }
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .content-card { padding: 22px; }
+  .ac-hero { padding: 36px 0 28px; }
+}

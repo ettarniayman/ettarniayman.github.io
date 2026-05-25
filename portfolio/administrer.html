@@ -3,120 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Administrer – Portfolio Ayman Ettarni</title>
-
-  <!-- Bootstrap -->
+  <title>Administrer – Compétence 1 | Ayman Ettarni</title>
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #00d4ff; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(0,212,255,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .hero { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid rgba(0,212,255,.08); }
+    .comp-badge { display: inline-block; background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.3); padding: 5px 16px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; margin-bottom: 1rem; }
+    .ac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .ac-card { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 26px; text-decoration: none; color: inherit; transition: all .2s; display: flex; flex-direction: column; }
+    .ac-card:hover { border-color: rgba(0,212,255,.35); box-shadow: 0 0 0 1px rgba(0,212,255,.12), 0 8px 32px rgba(0,212,255,.06); transform: translateY(-2px); }
+    .ac-code { font-family: monospace; font-size: .72rem; color: var(--accent); background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.18); padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 12px; }
+    .ac-card h3 { font-size: .95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 8px; line-height: 1.45; }
+    .ac-card p { font-size: .82rem; color: var(--muted); margin: 0 0 16px; flex-grow: 1; line-height: 1.6; }
+    .ac-card .arrow { color: var(--accent); font-size: .85rem; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot-green { background: #22c55e; }
+    .dot-orange { background: #f59e0b; }
+    .status-label { font-size: .72rem; color: var(--muted); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
-<header class="py-3 border-bottom">
+<header class="page-header">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="../index.html#portfolio" class="fw-bold text-decoration-none">
-      <i class="bi bi-arrow-left"></i> Retour au portfolio
-    </a>
-    <span class="fw-semibold">Compétence : ADMINISTRER</span>
+    <a href="../index.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour au portfolio</a>
+    <span style="font-size:.78rem;color:var(--muted)">Compétence 1 — Administrer</span>
   </div>
 </header>
 
-<main class="container my-5">
-
-  <h1 class="mb-3">Administrer les réseaux et l’Internet </h1>
-
-  <p class="lead">
-    La compétence <strong>Administrer</strong> vise à assurer l’installation,
-    la configuration, l’exploitation et le maintien en condition opérationnelle
-    des infrastructures réseaux et des systèmes informatiques.
-    Elle s’inscrit dans une logique de continuité de service et de réponse aux besoins
-    des utilisateurs.
-  </p>
-
-  <hr class="my-4">
-  <h2 class="mb-3">Activités couvertes par la compétence</h2>
-  <ul>
-    <li>Installer et paramétrer des équipements réseaux et systèmes</li>
-    <li>Administrer des services réseaux et systèmes</li>
-    <li>Identifier les dysfonctionnements du réseau local</li>
-    <li>Configurer les fonctions de base du réseau local</li>
-    <li>Appliquer des procédures d’exploitation et de maintenance</li>
-  </ul>
-
-  <hr class="my-4">
-  <h2 class="mb-4">Exemple de travaux réalisés</h2>
-
-  <div class="row g-4">
-
-    <!-- R101 -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h3 class="h5">
-            <i class="bi bi-hdd-network me-2"></i> R101 — TP7 : Compte-rendu
-          </h3>
-          <a class="btn btn-primary btn-sm"
-             href="../docs/TP7_AYMAN-ETTARNI.pdf" target="_blank" rel="noopener">
-            📄 Ouvrir le PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- R102 -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h3 class="h5">
-            <i class="bi bi-diagram-3 me-2"></i> R102 — TP5 : Compte-rendu
-          </h3>
-          <a class="btn btn-primary btn-sm"
-             href="../docs/TP5_R102.pdf" target="_blank" rel="noopener">
-            📄 Ouvrir le PDF
-          </a>
-        </div>
-      </div>
-    </div>
+<section class="hero">
+  <div class="container" data-aos="fade-up">
+    <div class="comp-badge">UE 1.1 — Administrer</div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.6rem,4vw,2.4rem)">Administrer les réseaux<br>et l'Internet</h1>
+    <p style="color:#94a3b8;max-width:600px;font-size:.97rem">Configurer, maintenir et sécuriser les équipements d'un réseau local : switches, routeurs, OS serveurs, postes clients.</p>
   </div>
-  <hr class="my-4">
-  <h2>Compétences développées</h2>
-  <ul>
-    <li>Configurer et vérifier un réseau (adressage, tests, diagnostic)</li>
-    <li>Appliquer une méthode d’administration et documenter les actions</li>
-    <li>Analyser des résultats et justifier des choix techniques</li>
-  </ul>
+</section>
 
-  <!-- Logos des outils -->
-  <hr class="my-4">
-  <h2>Outils utilisés</h2>
-  <div class="d-flex flex-wrap gap-4 mt-3">
-    <img src="../assets/img/logo/wireshark.jpeg" alt="Wireshark" width="60">
-    <img src="../assets/img/logo/packet tracer.jpeg" alt="Cisco Packet Tracer" width="60">
-    <img src="../assets/img/logo/Vscode.jpeg" alt="VS Code" width="60">
+<main class="container py-5">
+  <h2 class="mb-4" style="font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Apprentissages Critiques</h2>
+  <div class="ac-grid" data-aos="fade-up">
+
+    <a href="administrer/ac0111.html" class="ac-card">
+      <span class="ac-code">AC0111</span>
+      <h3>Maîtriser les lois fondamentales de l'électricité</h3>
+      <p>Loi d'Ohm, Kirchhoff, grandeurs électriques pour intervenir sur des équipements réseau.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="administrer/ac0112.html" class="ac-card">
+      <span class="ac-code">AC0112</span>
+      <h3>Comprendre l'architecture des systèmes numériques</h3>
+      <p>Systèmes de numération, codage de l'information, architecture interne d'un ordinateur.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="administrer/ac0113.html" class="ac-card">
+      <span class="ac-code">AC0113</span>
+      <h3>Configurer les fonctions de base du réseau local</h3>
+      <p>VLANs, adressage IP, routage inter-VLAN, sécurisation des accès sur équipements Cisco.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="administrer/ac0114.html" class="ac-card">
+      <span class="ac-code">AC0114</span>
+      <h3>Maîtriser les rôles et principes des systèmes d'exploitation</h3>
+      <p>Administration Linux et Windows, commandes CLI, gestion des processus et des services réseau.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="administrer/ac0115.html" class="ac-card">
+      <span class="ac-code">AC0115</span>
+      <h3>Identifier les dysfonctionnements du réseau local</h3>
+      <p>Diagnostic de pannes avec ping, traceroute, Wireshark, Cisco Packet Tracer.</p>
+      <div><span class="status-dot dot-green"></span><span class="status-label">Acquis</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
+    <a href="administrer/ac0116.html" class="ac-card">
+      <span class="ac-code">AC0116</span>
+      <h3>Installer un poste client</h3>
+      <p>Installation OS, configuration réseau, pilotes, sécurisation avant intégration au parc.</p>
+      <div><span class="status-dot dot-orange"></span><span class="status-label">En cours</span><span class="arrow float-end"><i class="bi bi-arrow-right"></i></span></div>
+    </a>
+
   </div>
-
-  <!-- Lien Moodle -->
-  <hr class="my-4">
-  <h2>Ressources utiles</h2>
-  <a class="btn btn-outline-primary mt-3"
-     href="https://moodle.univ-artois.fr/"
-     target="_blank" rel="noopener">
-    📚 Accéder aux ressources Moodle
-  </a>
-
-  <a href="../index.html#portfolio" class="btn btn-secondary mt-4 d-block">
-    ⬅ Retour au portfolio
-  </a>
-
 </main>
 
-<footer class="py-4 border-top">
-  <div class="container text-center">
-    <a href="../legal.html">Mentions légales</a> • 
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../legal.html" class="me-3">Mentions légales</a>
     <a href="../credits.html">Crédits</a>
   </div>
 </footer>
-
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
 </body>
 </html>

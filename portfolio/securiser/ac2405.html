@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC24.05Cyber – Types d'attaque | Ayman Ettarni</title>
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root { --accent: #dc3545; --bg: #0a0e1a; --surface: #111827; --surface2: #1a2235; --muted: #64748b; --border: rgba(220,53,69,.15); }
+    * { box-sizing: border-box; }
+    body { background: var(--bg); color: #e2e8f0; font-family: system-ui, sans-serif; margin: 0; }
+    .page-header { background: rgba(10,14,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; transition: opacity .2s; }
+    .back-link:hover { opacity: .65; color: var(--accent); }
+    .breadcrumb-label { font-size: .78rem; color: var(--muted); }
+    .ac-hero { padding: 3rem 0 2.5rem; border-bottom: 1px solid rgba(220,53,69,.08); }
+    .badge-tech { background: rgba(220,53,69,.1); color: var(--accent); border: 1px solid rgba(220,53,69,.3); padding: 4px 14px; border-radius: 4px; font-size: .75rem; font-family: monospace; letter-spacing: .08em; }
+    .badge-sem { background: rgba(124,58,237,.12); color: #a78bfa; border: 1px solid rgba(124,58,237,.25); padding: 4px 12px; border-radius: 4px; font-size: .72rem; }
+    .content-section { background: var(--surface); border-radius: 12px; padding: 28px 30px; border: 1px solid rgba(255,255,255,.05); margin-bottom: 22px; }
+    .section-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: .75rem; display: flex; align-items: center; gap: 6px; }
+    .step-box { border-left: 3px solid var(--accent); padding-left: 18px; margin-bottom: 18px; }
+    .step-box h5 { font-size: .92rem; font-weight: 600; color: #e2e8f0; margin-bottom: .3rem; }
+    .step-box p { font-size: .85rem; color: var(--muted); margin: 0; }
+    .badge-mini { display: inline-block; background: rgba(220,53,69,.08); color: var(--accent); border: 1px solid rgba(220,53,69,.18); padding: 3px 10px; border-radius: 3px; font-size: .72rem; margin: 2px; }
+    .proof-box { background: var(--surface2); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .level-bar { height: 6px; background: rgba(255,255,255,.08); border-radius: 3px; margin-top: 8px; }
+    .level-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), #7c3aed); }
+    .reflexion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:576px){ .reflexion-grid { grid-template-columns: 1fr; } }
+    .ref-item { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 16px; }
+    .ref-item .ri-icon { font-size: 1.2rem; margin-bottom: 6px; }
+    .ref-item h5 { font-size: .85rem; font-weight: 600; color: #e2e8f0; margin-bottom: 5px; }
+    .ref-item p { font-size: .8rem; color: var(--muted); margin: 0; }
+    .bottom-nav { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 2.5rem; padding: 1.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+    footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+    footer a { color: var(--muted) !important; text-decoration: none; }
+    .btn-accent { background: rgba(220,53,69,.1); border: 1px solid rgba(220,53,69,.3); color: var(--accent); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-accent:hover { background: rgba(220,53,69,.2); color: var(--accent); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); color: #94a3b8; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: .88rem; transition: all .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); color: #e2e8f0; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="../securiser.html" class="back-link"><i class="bi bi-arrow-left"></i> Retour à Sécuriser</a>
+    <span class="breadcrumb-label">Sécuriser › <strong style="color:#e2e8f0">AC24.05Cyber</strong></span>
+  </div>
+</header>
+<section class="ac-hero">
+  <div class="container">
+    <div class="d-flex gap-2 mb-3 flex-wrap">
+      <span class="badge-tech">AC24.05Cyber</span>
+      <span class="badge-sem">Niveau 1 — S1/S2</span>
+    </div>
+    <h1 class="fw-bold mb-2" style="color:#fff;font-size:clamp(1.4rem,3.5vw,2.1rem)">Connaître les différents types d'attaque</h1>
+    <p style="color:#94a3b8;max-width:650px;font-size:.95rem">Analyser les mécanismes des principales cyberattaques : techniques d'intrusion, vecteurs d'exploitation et contre-mesures associées selon OWASP et MITRE ATT&CK.</p>
+  </div>
+</section>
+<main class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8" data-aos="fade-right">
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-circle"></i> Définition de l'AC</div>
+        <h4 style="color:#fff;margin-bottom:1rem">Qu'est-ce que cet apprentissage critique ?</h4>
+        <p>Cet apprentissage valide ma capacité à identifier, analyser et comprendre les différentes catégories de cyberattaques. Connaître les techniques offensives est indispensable pour concevoir des défenses adaptées.</p>
+        <ul style="color:#94a3b8;line-height:2">
+          <li><strong style="color:#e2e8f0">Attaques réseau :</strong> MITM, ARP spoofing, DoS/DDoS, sniffing, scan de ports</li>
+          <li><strong style="color:#e2e8f0">Attaques applicatives :</strong> Injection SQL, XSS, CSRF, LFI/RFI — OWASP Top 10</li>
+          <li><strong style="color:#e2e8f0">Attaques sociales :</strong> Phishing, spear-phishing, vishing, ingénierie sociale</li>
+          <li><strong style="color:#e2e8f0">Malwares :</strong> Ransomware, trojan, rootkit, keylogger — mécanismes et propagation</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-cpu"></i> Mise en pratique</div>
+        <div class="step-box">
+          <h5>SAÉ11 — Analyse de cas réels</h5>
+          <p>Étude de cas de cyberattaques notables (WannaCry, NotPetya, SolarWinds) — analyse des vecteurs d'attaque, de la propagation et des mesures de remédiation adoptées.</p>
+        </div>
+        <div class="step-box">
+          <h5>MOOC SecNumacadémie — Module Sécurité des réseaux</h5>
+          <p>Étude des attaques réseau : ARP poisoning, attaques sur DNS, exploitation de services mal configurés et détection de ces attaques.</p>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-lightbulb"></i> Réflexion personnelle</div>
+        <div class="reflexion-grid">
+          <div class="ref-item"><div class="ri-icon">✅</div><h5>Points maîtrisés</h5><p>Catégorisation des attaques (réseau, applicative, sociale, physique), mécanismes du phishing, DoS/DDoS, injection SQL et XSS.</p></div>
+          <div class="ref-item"><div class="ri-icon">📈</div><h5>Points à améliorer</h5><p>Pratique en lab sécurisé (TryHackMe, HackTheBox) pour expérimenter les attaques et comprendre les techniques d'exploitation.</p></div>
+          <div class="ref-item"><div class="ri-icon">💡</div><h5>Difficultés rencontrées</h5><p>La frontière entre attaques offensives légales (pentest) et illégales — comprendre le cadre juridique et éthique est essentiel.</p></div>
+          <div class="ref-item"><div class="ri-icon">🎯</div><h5>Objectifs futurs</h5><p>Pratiquer les attaques OWASP Top 10 en environnement DVWA et participer à des CTF pour développer les compétences offensives en contexte légal.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4" data-aos="fade-left">
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-info-square"></i> Informations</div>
+        <ul class="list-unstyled mb-0" style="font-size:.88rem">
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Code</span><strong>AC24.05Cyber</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Compétence</span><strong>Sécuriser (UE 1.4)</strong></li>
+          <li class="mb-3"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">SAÉ associée</span><strong>SAÉ11</strong></li>
+          <li><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block">Niveau de maîtrise</span>
+            <div class="level-bar"><div class="level-fill" style="width:72%"></div></div>
+            <span style="font-size:.75rem;color:var(--muted)">Bien acquis</span>
+          </li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-folder2-open"></i> Preuves</div>
+        <div class="proof-box">
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px">SAÉ11 — Analyse de cas d'attaque</p>
+          <h5 style="color:#e2e8f0;font-size:.88rem;margin-bottom:6px">Étude d'une cyberattaque réelle (MITRE ATT&amp;CK)</h5>
+          <p style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Analyse et modélisation d'une attaque phishing → mouvement latéral → ransomware selon le framework MITRE ATT&amp;CK — identification des tactiques et techniques utilisées.</p>
+          <div class="d-flex flex-wrap gap-2 mb-2">
+            <span class="badge-mini"><i class="bi bi-calendar me-1"></i>S1 — 2024/2025</span>
+            <span class="badge-mini"><i class="bi bi-geo-alt me-1"></i>IUT de Béthune</span>
+          </div>
+          <p style="font-size:.75rem;color:var(--muted);font-style:italic;margin:0"><i class="bi bi-info-circle me-1"></i>Document réalisé en cours</p>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-tools"></i> Outils utilisés</div>
+        <div class="d-flex flex-wrap gap-1 mt-1">
+          <span class="badge-mini">OWASP Top 10</span>
+          <span class="badge-mini">MITRE ATT&CK</span>
+          <span class="badge-mini">CVE</span>
+          <span class="badge-mini">ANSSI</span>
+        </div>
+      </div>
+      <div class="content-section">
+        <div class="section-label"><i class="bi bi-grid-3x2-gap"></i> Autres AC</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="ac2401.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.01</span> Bonnes pratiques</a>
+          <a href="ac2402.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.02</span> Sécurisation infra</a>
+          <a href="ac2403.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.03</span> Services</a>
+          <a href="ac2404.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.04</span> Cryptographie</a>
+          <a href="ac2406.html" class="btn-ghost text-start" style="font-size:.82rem"><span class="badge-mini me-1">AC24.06</span> Anglais technique</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <a href="ac2404.html" class="btn-ghost"><i class="bi bi-arrow-left me-2"></i>AC24.04 — Cryptographie</a>
+    <a href="ac2406.html" class="btn-accent">AC24.06 → Anglais technique <i class="bi bi-arrow-right ms-2"></i></a>
+    <a href="../securiser.html" class="btn-ghost"><i class="bi bi-grid me-2"></i>Tous les AC</a>
+  </div>
+</main>
+<footer class="py-4 mt-3">
+  <div class="container text-center" style="font-size:.85rem">
+    <a href="../../legal.html" class="me-3">Mentions légales</a>
+    <a href="../../credits.html">Crédits</a>
+  </div>
+</footer>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/aos/aos.js"></script>
+<script>AOS.init({duration:600,once:true});</script>
+</body>
+</html>
